@@ -2,10 +2,12 @@ package app.config;
 
 import foo.bar.Cat;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 @Configuration
+@ComponentScan(basePackages = "foo.bar")
 public class ProjectConfig {
 
     @Bean(name = "puppy")
