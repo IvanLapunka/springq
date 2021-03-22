@@ -15,6 +15,20 @@ public class ProjectConfig {
     }
 
     @Bean
+    Cat cat2() {
+        final Cat cat = new Cat();
+        cat.setName("Murka");
+        return cat;
+    }
+
+    @Bean
+    Cat cat3() {
+        final Cat cat = new Cat();
+        cat.setName("Stella");
+        return cat;
+    }
+
+    @Bean
     String helloWorld() {
         return "Hello world";
     }
