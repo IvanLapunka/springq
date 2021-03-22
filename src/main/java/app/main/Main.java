@@ -20,5 +20,8 @@ public class Main {
         final Integer dozen = context.getBean(Integer.class);
         System.out.println(helloWorld);
         System.out.println(dozen);
+
+        final Cat defaultCat = context.getBean(Cat.class);
+        System.out.println(defaultCat.getName());
     }
 }
