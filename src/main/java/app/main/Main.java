@@ -9,7 +9,7 @@ import javax.xml.catalog.Catalog;
 public class Main {
     public static void main(String[] args) {
         final var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        final Cat cat = context.getBean("cat",Cat.class);
+        final Cat cat = context.getBean("cat", Cat.class);
         System.out.println(cat.getName());
 
         final String helloWorld = context.getBean(String.class);
