@@ -7,21 +7,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProjectConfig {
 
-    @Bean
+    @Bean(name = "puppy")
     Cat cat() {
         final Cat cat = new Cat();
         cat.setName("Puppy");
         return cat;
     }
 
-    @Bean
+    @Bean(value = "murka")
     Cat cat2() {
         final Cat cat = new Cat();
         cat.setName("Murka");
         return cat;
     }
 
-    @Bean
+    @Bean("stella")
     Cat cat3() {
         final Cat cat = new Cat();
         cat.setName("Stella");
