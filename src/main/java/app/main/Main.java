@@ -11,5 +11,10 @@ public class Main {
         final var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         final Cat cat = context.getBean(Cat.class);
         System.out.println(cat.getName());
+
+        final String helloWorld = context.getBean(String.class);
+        final Integer dozen = context.getBean(Integer.class);
+        System.out.println(helloWorld);
+        System.out.println(dozen);
     }
 }
