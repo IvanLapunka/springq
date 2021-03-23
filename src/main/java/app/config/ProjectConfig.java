@@ -1,6 +1,8 @@
 package app.config;
 
 import foo.bar.Cat;
+import foo.bar.Parrot;
+import foo.bar.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +12,20 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan(basePackages = "foo.bar")
 public class ProjectConfig {
 
-    @Bean(name = "puppy")
+    @Bean
+    Person person() {
+        Person person = new Person();
+        person.setName("Vasja");
+        return person;
+    }
+
+    Parrot parrot() {
+        Parrot parrot = new Parrot();
+        parrot.setName("Stepa");
+        return parrot;
+    }
+    ////////////////////////
+    @Bean(name = "kitty")
     @Primary
     Cat cat() {
         final Cat cat = new Cat();

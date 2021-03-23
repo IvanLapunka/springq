@@ -3,6 +3,7 @@ package app.main;
 import app.config.ProjectConfig;
 import foo.bar.Cat;
 import foo.bar.Parrot;
+import foo.bar.Person;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.catalog.Catalog;
@@ -10,8 +11,24 @@ import javax.xml.catalog.Catalog;
 public class Main {
     public static void main(String[] args) {
         final var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        beanContextAddition(context);
+//        beanContextAddition(context);
+//        getPrimaryBean(context);
 
+        final Person person = context.getBean(Person.class);
+        System.out.println(person.getName());
+
+        final Parrot parrot = context.getBean("parrot", Parrot.class);
+        System.out.println(parrot);
+
+        final Cat kitty = context.getBean("kitty", Cat.class);
+        System.out.println(kitty);
+
+        System.out.println(person.getCat());
+        System.out.println(person.getParrot());
+    }
+
+    private static void getPrimaryBean(AnnotationConfigApplicationContext context) {
+        //primary bean
         Parrot p = context.getBean(Parrot.class);
         System.out.println(p.getName());
     }
