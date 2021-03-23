@@ -3,6 +3,7 @@ package app.config;
 import foo.bar.Cat;
 import foo.bar.Parrot;
 import foo.bar.Person;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,11 +14,11 @@ import org.springframework.context.annotation.Primary;
 public class ProjectConfig {
 
     @Bean
-    Person person(Parrot parrot2) {
+    Person person(@Qualifier("parrot2") Parrot parrot) {
         Person person = new Person();
         person.setName("Vasja");
         person.setCat(cat2());
-        person.setParrot(parrot2);
+        person.setParrot(parrot);
         return person;
     }
 
