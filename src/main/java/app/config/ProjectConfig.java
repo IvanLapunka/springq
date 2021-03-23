@@ -17,8 +17,8 @@ public class ProjectConfig {
     Person person(@Qualifier("parrot2") Parrot parrot) {
         Person person = new Person();
         person.setName("Vasja");
-        person.setCat(cat2());
-        person.setParrot(parrot);
+//        person.setCat(cat2());
+//        person.setParrot(parrot);
         return person;
     }
 

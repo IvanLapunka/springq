@@ -26,7 +26,7 @@ public class Main {
 
         System.out.println(person.getCat());
         System.out.println(person.getParrot());
-        System.out.println(context.getBean(Dog.class).getName());
+        System.out.println(person.getDog());
     }
 
     private static void getPrimaryBean(AnnotationConfigApplicationContext context) {
