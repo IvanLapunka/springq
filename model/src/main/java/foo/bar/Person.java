@@ -12,6 +12,11 @@ public class Person {
     Cat cat;
     Dog dog;
 
+    @Autowired
+    public void setParrot(Parrot parrot) {
+        this.parrot = parrot;
+    }
+
     public Person() {}
 
     @Autowired
