@@ -13,16 +13,25 @@ import org.springframework.context.annotation.Primary;
 public class ProjectConfig {
 
     @Bean
-    Person person() {
+    Person person(Parrot parrot2) {
         Person person = new Person();
         person.setName("Vasja");
         person.setCat(cat2());
+        person.setParrot(parrot2);
         return person;
     }
 
+    @Bean
     Parrot parrot() {
         Parrot parrot = new Parrot();
         parrot.setName("Stepa");
+        return parrot;
+    }
+
+    @Bean
+    Parrot parrot2() {
+        Parrot parrot = new Parrot();
+        parrot.setName("Kesha");
         return parrot;
     }
     ////////////////////////
