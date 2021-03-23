@@ -1,6 +1,7 @@
 package foo.bar2;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Data
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Hole {
     String name = "Blue hole";
     Rat rat;
-    public Hole(Rat rat2) {
-        this.rat = rat2;
+    public Hole(@Qualifier("rat") Rat rat) {
+        this.rat = rat;
     }
 }
