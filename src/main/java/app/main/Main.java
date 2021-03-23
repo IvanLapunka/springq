@@ -2,6 +2,7 @@ package app.main;
 
 import app.config.ProjectConfig;
 import foo.bar.Cat;
+import foo.bar.Dog;
 import foo.bar.Parrot;
 import foo.bar.Person;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,6 +26,7 @@ public class Main {
 
         System.out.println(person.getCat());
         System.out.println(person.getParrot());
+        System.out.println(context.getBean(Dog.class).getName());
     }
 
     private static void getPrimaryBean(AnnotationConfigApplicationContext context) {
