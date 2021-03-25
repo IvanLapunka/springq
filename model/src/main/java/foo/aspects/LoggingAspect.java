@@ -22,8 +22,11 @@ public class LoggingAspect {
         logger.info("Method " + methodName +
                 " with parameters " + Arrays.asList(args) +
                 " will execute");
-        final Object proceed = joinPoint.proceed();
+        Comment comment = new Comment();
+        comment.setText("Corrected text!");
+        Object[] newArgs = {comment};
+        final Object proceed = joinPoint.proceed(newArgs);
         logger.info("Method executed and returned " + proceed);
-        return proceed;
+        return "FAILED";
     }
 }
