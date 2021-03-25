@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class LoggingAspect {
     private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
 
-    @Around("execution(* foo.aspects.*.*(..))")
+    @Around("execution(String foo.aspects.*.*(..))")
     public Object log(ProceedingJoinPoint joinPoint) throws Throwable {
         final String methodName = joinPoint.getSignature().getName();
         final Object[] args = joinPoint.getArgs();
@@ -28,5 +28,13 @@ public class LoggingAspect {
         final Object proceed = joinPoint.proceed(newArgs);
         logger.info("Method executed and returned " + proceed);
         return "FAILED";
+    }
+
+    @Around("@annotation(ToLog)")
+    public void log2(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info("Run before void method");
+        joinPoint.proceed();
+        logger.info("Run after void method.");
+
     }
 }

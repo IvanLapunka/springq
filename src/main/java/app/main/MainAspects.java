@@ -19,5 +19,10 @@ public class MainAspects {
         comment.setAuthor("NickName");
         final String s = comme.publishComment(comment);
         logger.info(s);
+
+        Comment comment2 = new Comment();
+        comment.setText("Delete this text");
+        comment.setAuthor("Anonime");
+        comme.deleteComment(comment2);
     }
 }
